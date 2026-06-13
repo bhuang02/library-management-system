@@ -1,0 +1,24 @@
+<testsuites id="" name="" tests="10" failures="0" skipped="0" errors="0" time="19.209039">
+<testsuite name="return-and-reservation.spec.js" timestamp="2026-06-13T18:00:31.865Z" hostname="" tests="10" failures="0" skipped="0" time="18.344" errors="0">
+<testcase name="Returning and reservation promotion E2E tests › E2E-01 returns a book through the UI and shows the loan as returned" classname="return-and-reservation.spec.js" time="1.088">
+</testcase>
+<testcase name="Returning and reservation promotion E2E tests › E2E-02 shows the frozen fee on the loan detail page after return" classname="return-and-reservation.spec.js" time="1.26">
+</testcase>
+<testcase name="Returning and reservation promotion E2E tests › E2E-03 promotes a reservation to ready after the borrowed book is returned through the UI" classname="return-and-reservation.spec.js" time="1.824">
+</testcase>
+<testcase name="Returning and reservation promotion E2E tests › E2E-04 keeps available copies at 0 when a pending reservation exists during return" classname="return-and-reservation.spec.js" time="1.811">
+</testcase>
+<testcase name="Returning and reservation promotion E2E tests › E2E-05 verifies availableCopies on book detail decrements after borrow and restores after return via UI" classname="return-and-reservation.spec.js" time="2.373">
+</testcase>
+<testcase name="Returning and reservation promotion E2E tests › E2E-07 rejects a sixth borrow via the UI when a member already has 5 active loans" classname="return-and-reservation.spec.js" time="0.793">
+</testcase>
+<testcase name="Returning and reservation promotion E2E tests › E2E-08 allows a sixth borrow via the UI after returning one of 5 active loans" classname="return-and-reservation.spec.js" time="2.026">
+</testcase>
+<testcase name="Returning and reservation promotion E2E tests › E2E-09 skips a cancelled reservation and promotes the next pending one when a loan is returned via UI" classname="return-and-reservation.spec.js" time="2.927">
+</testcase>
+<testcase name="Returning and reservation promotion E2E tests › E2E-10 promotes two reservations in FIFO order as two copies are returned via UI" classname="return-and-reservation.spec.js" time="2.952">
+</testcase>
+<testcase name="Returning and reservation promotion E2E tests › E2E-06 seeds an overdue loan, verifies accrued fee on detail page, freezes fee on return, and confirms removal from the overdue report" classname="return-and-reservation.spec.js" time="1.29">
+</testcase>
+</testsuite>
+</testsuites>

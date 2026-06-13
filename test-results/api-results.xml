@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="11" failures="0" errors="0" time="0.372631333">
+    <testsuite name="tests/api/availability.api.test.js" timestamp="2026-06-13T19:15:41.661Z" hostname="Benjamins-Air" tests="2" failures="0" errors="0" skipped="0" time="0.1211285">
+        <testcase classname="tests/api/availability.api.test.js" name="Book availability after returning loans &gt; API-10 increases availableCopies after return when no pending reservation exists" time="0.108625625">
+        </testcase>
+        <testcase classname="tests/api/availability.api.test.js" name="Book availability after returning loans &gt; API-11 does not increase availableCopies when a pending reservation exists" time="0.011479041">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/api/fee.api.test.js" timestamp="2026-06-13T19:15:41.661Z" hostname="Benjamins-Air" tests="4" failures="0" errors="0" skipped="0" time="0.127848333">
+        <testcase classname="tests/api/fee.api.test.js" name="GET /api/loans/:id/fee &gt; API-06 returns fee 0 for an active loan that is not overdue" time="0.083210541">
+        </testcase>
+        <testcase classname="tests/api/fee.api.test.js" name="GET /api/loans/:id/fee &gt; API-07 returns the accrued fee for an active overdue loan" time="0.025318459">
+        </testcase>
+        <testcase classname="tests/api/fee.api.test.js" name="GET /api/loans/:id/fee &gt; API-08 returns the frozen stored fee for a returned loan" time="0.014418583">
+        </testcase>
+        <testcase classname="tests/api/fee.api.test.js" name="GET /api/loans/:id/fee &gt; API-09 returns 404 for fee lookup on a non-existent loan" time="0.003724416">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/api/return.api.test.js" timestamp="2026-06-13T19:15:41.662Z" hostname="Benjamins-Air" tests="5" failures="0" errors="0" skipped="0" time="0.1236545">
+        <testcase classname="tests/api/return.api.test.js" name="POST /api/loans/:id/return &gt; API-01 returns a valid active loan and marks it as returned" time="0.079435416">
+        </testcase>
+        <testcase classname="tests/api/return.api.test.js" name="POST /api/loans/:id/return &gt; API-02 returns fee 0 when an active loan is returned before the due date" time="0.01148525">
+        </testcase>
+        <testcase classname="tests/api/return.api.test.js" name="POST /api/loans/:id/return &gt; API-03 calculates the late fee when an overdue active loan is returned" time="0.009640666">
+        </testcase>
+        <testcase classname="tests/api/return.api.test.js" name="POST /api/loans/:id/return &gt; API-04 returns 409 when trying to return the same loan twice" time="0.01838375">
+        </testcase>
+        <testcase classname="tests/api/return.api.test.js" name="POST /api/loans/:id/return &gt; API-05 returns 404 when trying to return a non-existent loan" time="0.003247542">
+        </testcase>
+    </testsuite>
+</testsuites>

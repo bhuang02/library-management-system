@@ -6,12 +6,28 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
-    "seed": "node seed.js"
+    "seed": "node seed.js",
+
+    "test": "npm run test:unit && npm run test:api && npm run test:integration && npm run test:e2e",
+    "test:unit": "NODE_ENV=test vitest run tests/unit --reporter=default --reporter=junit --outputFile=./test-results/unit-results.xml",
+    "test:api": "NODE_ENV=test vitest run tests/api --reporter=default --reporter=junit --outputFile=./test-results/api-results.xml",
+    "test:integration": "NODE_ENV=test vitest run tests/integration --reporter=default --reporter=junit --outputFile=./test-results/integration-results.xml",
+    "test:vitest": "NODE_ENV=test vitest run",
+    "test:e2e": "start-server-and-test \"npm run seed && npm start\" http://localhost:3000 \"playwright test tests/e2e\"",
+
+    "test:report": "vitest run --reporter=default --reporter=junit --outputFile=./test-results/vitest-results.xml",
+    "test:e2e:report": "playwright test tests/e2e --reporter=list,junit"
   },
   "dependencies": {
     "express": "^4.18.3",
     "sql.js": "^1.12.0",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "start-server-and-test": "^3.0.10",
+    "supertest": "^7.2.2",
+    "vitest": "^4.1.8"
   }
 }

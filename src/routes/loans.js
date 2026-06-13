@@ -140,11 +140,12 @@ router.post('/', (req, res) => {
     return res.status(409).json({ error: `Members may not have more than ${MAX_ACTIVE_LOANS} active loans` });
 
   const today = new Date().toISOString().slice(0, 10);
-  const due = dueDate(today);
+  const borrowDateVal = req.body.borrowDate ?? today;
+  const dueDateVal = req.body.dueDate ?? dueDate(borrowDateVal);
 
   const result = db.prepare(
     'INSERT INTO loans (bookId, memberId, borrowDate, dueDate) VALUES (?, ?, ?, ?)'
-  ).run(bookId, memberId, today, due);
+  ).run(bookId, memberId, borrowDateVal, dueDateVal);
 
   db.prepare('UPDATE books SET availableCopies = availableCopies - 1 WHERE id = ?').run(bookId);
 

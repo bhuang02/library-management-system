@@ -1,0 +1,64 @@
+name: Tests
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npx playwright install --with-deps
+
+      - run: mkdir -p test-results
+
+      - name: Unit tests
+        id: unit
+        run: npm run test:unit
+        continue-on-error: true
+
+      - name: API tests
+        id: api
+        run: npm run test:api
+        continue-on-error: true
+
+      - name: Integration tests
+        id: integration
+        run: npm run test:integration
+        continue-on-error: true
+
+      - name: E2E tests
+        id: e2e
+        run: npm run test:e2e
+        continue-on-error: true
+
+      - name: Upload test artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: |
+            test-results/
+            playwright-report/
+
+      - name: Fail if any suite failed
+        if: always()
+        run: |
+          if [ "${{ steps.unit.outcome }}"        = "failure" ] ||
+             [ "${{ steps.api.outcome }}"         = "failure" ] ||
+             [ "${{ steps.integration.outcome }}" = "failure" ] ||
+             [ "${{ steps.e2e.outcome }}"         = "failure" ]; then
+            echo "One or more test suites failed"
+            exit 1
+          fi

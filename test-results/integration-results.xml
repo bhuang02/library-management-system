@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="8" failures="0" errors="0" time="0.368631293">
+    <testsuite name="tests/integration/borrow-return.integration.test.js" timestamp="2026-06-13T19:15:42.432Z" hostname="Benjamins-Air" tests="2" failures="0" errors="0" skipped="0" time="0.108375334">
+        <testcase classname="tests/integration/borrow-return.integration.test.js" name="Borrow → return integration flows &gt; INT-01 completes a full borrow → return on-time flow" time="0.095845334">
+        </testcase>
+        <testcase classname="tests/integration/borrow-return.integration.test.js" name="Borrow → return integration flows &gt; INT-08 removes a returned overdue loan from the overdue report" time="0.011605583">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/integration/loan-limit.integration.test.js" timestamp="2026-06-13T19:15:42.432Z" hostname="Benjamins-Air" tests="2" failures="0" errors="0" skipped="0" time="0.131264792">
+        <testcase classname="tests/integration/loan-limit.integration.test.js" name="Loan limit integration flows &gt; INT-02 rejects a sixth active loan when a member already has 5 active loans" time="0.105124208">
+        </testcase>
+        <testcase classname="tests/integration/loan-limit.integration.test.js" name="Loan limit integration flows &gt; INT-03 allows a member to borrow again after returning one of 5 active loans" time="0.024789459">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/integration/reservation-promotion.integration.test.js" timestamp="2026-06-13T19:15:42.433Z" hostname="Benjamins-Air" tests="4" failures="0" errors="0" skipped="0" time="0.128991167">
+        <testcase classname="tests/integration/reservation-promotion.integration.test.js" name="Reservation promotion integration flows &gt; INT-04 promotes a pending reservation to ready when a loan is returned" time="0.088746959">
+        </testcase>
+        <testcase classname="tests/integration/reservation-promotion.integration.test.js" name="Reservation promotion integration flows &gt; INT-05 does not increment availableCopies when a reservation is promoted" time="0.007766958">
+        </testcase>
+        <testcase classname="tests/integration/reservation-promotion.integration.test.js" name="Reservation promotion integration flows &gt; INT-06 skips a cancelled reservation and promotes the next pending reservation" time="0.012763833">
+        </testcase>
+        <testcase classname="tests/integration/reservation-promotion.integration.test.js" name="Reservation promotion integration flows &gt; INT-07 promotes two reservations in FIFO order when two copies are returned" time="0.018745917">
+        </testcase>
+    </testsuite>
+</testsuites>

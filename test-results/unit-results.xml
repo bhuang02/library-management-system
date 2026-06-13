@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="8" failures="0" errors="0" time="0.003061416">
+    <testsuite name="tests/unit/fees.test.js" timestamp="2026-06-13T19:15:11.632Z" hostname="Benjamins-Air" tests="8" failures="0" errors="0" skipped="0" time="0.003061416">
+        <testcase classname="tests/unit/fees.test.js" name="fees.js unit tests &gt; dueDate() &gt; UNIT-01 sets the due date to the borrow date plus 14 days" time="0.001711333">
+        </testcase>
+        <testcase classname="tests/unit/fees.test.js" name="fees.js unit tests &gt; dueDate() &gt; UNIT-02 correctly handles month boundaries when adding 14 days" time="0.000092667">
+        </testcase>
+        <testcase classname="tests/unit/fees.test.js" name="fees.js unit tests &gt; calculateFee() &gt; UNIT-03 returns 0 when the book is returned before the due date" time="0.000103">
+        </testcase>
+        <testcase classname="tests/unit/fees.test.js" name="fees.js unit tests &gt; calculateFee() &gt; UNIT-04 returns 0 when the book is returned exactly on the due date" time="0.000068958">
+        </testcase>
+        <testcase classname="tests/unit/fees.test.js" name="fees.js unit tests &gt; calculateFee() &gt; UNIT-05 charges the daily rate for one day overdue" time="0.000069375">
+        </testcase>
+        <testcase classname="tests/unit/fees.test.js" name="fees.js unit tests &gt; calculateFee() &gt; UNIT-06 charges one daily rate below the maximum fee for 39 days overdue" time="0.000057666">
+        </testcase>
+        <testcase classname="tests/unit/fees.test.js" name="fees.js unit tests &gt; calculateFee() &gt; UNIT-07 caps the fee at the maximum fee for 40 days overdue" time="0.000054208">
+        </testcase>
+        <testcase classname="tests/unit/fees.test.js" name="fees.js unit tests &gt; calculateFee() &gt; UNIT-08 keeps the fee capped beyond 40 days overdue" time="0.000057208">
+        </testcase>
+    </testsuite>
+</testsuites>
